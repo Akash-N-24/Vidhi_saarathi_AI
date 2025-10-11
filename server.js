@@ -279,54 +279,52 @@ app.post('/api/analyze', async (req, res) => {
 
 "${query}"
 
-Provide structured analysis in HTML format:
+Provide a structured legal analysis in the following HTML format. Prioritize the new Bharatiya Nyaya Sanhita (BNS) sections, but also mention the corresponding old Indian Penal Code (IPC) sections for clarity and transitional reference.
 
 <div class="legal-analysis">
 <div class="domain-section">
 <h3>🏛️ Legal Domain</h3>
 <p><strong>Primary Domain:</strong> [Criminal/Civil/Family/Constitutional/Corporate Law]</p>
-<p><strong>Brief Explanation:</strong> [2-3 sentences explaining the legal area]</p>
+<p><strong>Brief Explanation:</strong> [2-3 sentences explaining the legal area based on the query]</p>
 </div>
 
 <div class="priority-section">
 <h3>⚠️ Priority Assessment</h3>
 <div class="priority-badge">[High/Medium/Low] Priority</div>
 <p><strong>Score:</strong> [X]/10</p>
-<p><strong>Reasoning:</strong> [Why this priority level - 1-2 sentences]</p>
+<p><strong>Reasoning:</strong> [Briefly justify the priority level and score, considering factors like violence, urgency, or potential for harm]</p>
 </div>
 
 <div class="explanation-section">
 <h3>⚖️ Legal Analysis</h3>
-<p>[Explain legal issues in simple terms. Include 2-3 most relevant sections of IPC/CPC/Constitution]</p>
+<p>[Explain the legal issues in simple, clear terms. Identify the 2-3 most relevant sections from the Bharatiya Nyaya Sanhita (BNS) and specify their corresponding sections from the old Indian Penal Code (IPC) for context. For example: "This likely falls under BNS Section X (formerly IPC Section Y)..."]</p>
 </div>
 
 <div class="actions-section">
 <h3>📋 Recommended Actions</h3>
 <ol>
-<li><strong>Immediate:</strong> [What to do now]</li>
-<li><strong>Documentation:</strong> [Key documents needed]</li>
-<li><strong>Legal Process:</strong> [Next legal steps]</li>
-<li><strong>Timeline:</strong> [Important deadlines]</li>
+<li><strong>Immediate:</strong> [What is the most critical first step? e.g., Contact the police, ensure personal safety]</li>
+<li><strong>Documentation:</strong> [List key evidence or documents to collect. e.g., photos, messages, medical reports]</li>
+<li><strong>Legal Process:</strong> [Outline the immediate next legal steps. e.g., Filing a First Information Report (FIR)]</li>
+<li><strong>Timeline:</strong> [Mention any critical deadlines or time-sensitive actions, if applicable]</li>
 </ol>
 </div>
 
 <div class="laws-section">
 <h3>📖 Relevant Laws</h3>
 <ul>
-<li>[Most applicable IPC sections]</li>
-<li>[Relevant CPC/Constitution articles]</li>
-<li>[Other applicable laws]</li>
+<li><strong>Bharatiya Nyaya Sanhita (BNS):</strong> [List the most applicable BNS section(s) with their old IPC equivalent in parentheses. e.g., Section 101 (Theft) (formerly IPC Sec. 378)]</li>
+<li><strong>Other Laws:</strong> [List relevant sections from BNSS, BSA, the Constitution, or other specific acts as applicable]</li>
 </ul>
 </div>
 
 <div class="disclaimer-section">
 <h3>⚠️ Important Notice</h3>
-<p><em>This AI analysis is for general information only. Consult a qualified lawyer for specific legal advice tailored to your situation.</em></p>
+<p><em>This AI analysis is for informational purposes only and is not a substitute for legal advice. Consult a qualified lawyer for guidance on your specific situation.</em></p>
 </div>
 </div>
 
-Keep response comprehensive but concise for optimal performance.`;
-
+Keep the response comprehensive but concise for optimal performance.
         // Call enhanced AI system
         const aiResult = await callAIWithAdvancedFallback(legalPrompt);
         
@@ -659,3 +657,4 @@ app.listen(PORT, () => {
     console.log('🎊 Ready to serve legal guidance with maximum reliability!');
     console.log('🎉 ==========================================\n');
 });
+
